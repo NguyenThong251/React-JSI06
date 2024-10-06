@@ -13,6 +13,7 @@ const SignUp = () => {
   const handleSignUp = async () => {
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      console.log(userCredential)
       const user = userCredential.user;
 
       // Gọi apiClient.post thay vì axios.post
