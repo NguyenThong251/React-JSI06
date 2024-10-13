@@ -1,19 +1,22 @@
 import React from 'react';
-import useCartStore from '../../../store/cartStore'; // Import store
+import useCartStore from '../../../store/cartStore';
 
-export default function CardProduct({ image, name, price }) {
-  const addToCart = useCartStore((state) => state.addToCart); // Lấy hàm addToCart từ store
+export default function CardProduct({ image, name, price, id }) {
+  const addToCart = useCartStore((state) => state.addToCart);
 
   const handleAddToCart = () => {
-    addToCart({ image, name, price }); // Gọi hàm addToCart khi nhấn nút
+    addToCart({ id, name, price, image });
   };
 
   return (
     <div>
-      <div className=""><img src={image} alt="" className='h-56 w-full' />
-        <div className="">{name}</div>
-        <div className="">{price}</div>
-        <button onClick={handleAddToCart} className="bg-blue-500 text-white p-2 mt-2">Add to Cart</button> {/* Nút thêm vào giỏ hàng */}
+      <div>
+        <img src={image} alt={name} className="h-56 w-full" />
+        <div>{name}</div>
+        <div>{price}</div>
+        <button onClick={handleAddToCart} className="bg-blue-500 text-white p-2 mt-2">
+          Add to Cart
+        </button>
       </div>
     </div>
   );

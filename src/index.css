@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer components {
+
+    .link{
+        @apply py-1  hover:text-indigo-600 font-medium text-gray-800 text-lg hover:border-b-[4px] hover:border-b-indigo-600 transition hover:ease-linear duration-300 hover:transition
+    }
+}
