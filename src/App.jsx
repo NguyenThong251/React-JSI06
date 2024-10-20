@@ -6,8 +6,10 @@ import Header from "./components/user/Header";
 import Signup from "./pages/user/Signup";
 import Login from "./pages/user/Login";
 import Cart from "./pages/user/Cart";
+import { MantineProvider } from "@mantine/core";
 function App() {
   return (
+    <MantineProvider withGlobalStyles withNormalizeCSS>
     <Router>
       <Header/>
       <div>
@@ -21,6 +23,7 @@ function App() {
         </Routes>
       </div>
     </Router>
+    </MantineProvider>
   );
 }
 
