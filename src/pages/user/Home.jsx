@@ -1,6 +1,6 @@
 import React from "react";
 import Resgister from "../../components/user/form/Resgister";
-import CardProduct from "../../components/user/ui/CardProduct";
+import CardProduct from "../../components/user/card/CardProduct";
 import useCartStore from "../../store/cartStore";
 import { Burger, Button, Drawer } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
@@ -91,16 +91,9 @@ function Home(){
         <Hero/>
         <section>
         <div className="grid grid-cols-4 px-20">
-        <div className="card">
-            <div className="bg-orange-200 relative overflow-hidden">
-                <img src="https://pettie.wpengine.com/wp-content/uploads/2023/05/shop-1-1000x1000.webp" alt="" />
-                <div className="absolute bottom-10 left-1/2 translate-y-0">
-
-                <Button color="red" className="">123</Button>
-                </div>
-            </div>
+        <CardProduct/>
         </div>
-        </div>
+        <div className="">123</div>
     </section>
 </div>
 </>
