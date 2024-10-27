@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-
+import '@mantine/carousel/styles.css';
 import reportWebVitals from './reportWebVitals';
 import '@mantine/core/styles.css';
 

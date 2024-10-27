@@ -6,7 +6,8 @@ import { Burger, Button, Drawer } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import CardCategory from "../../components/user/card/CardCategory";
 import Hero from "../../components/user/Hero";
-
+import { Carousel } from "@mantine/carousel";
+// import { Carousel } from '@mantine/carousel';
 function Home(){
   const data = [
       { id: 1, image: 'https://images.unsplash.com/photo-1719937050640-71cfd3d851be?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxfHx8ZW58MHx8fHx8', name: 'Product 1', price: '100$' },
@@ -16,6 +17,43 @@ function Home(){
   const [opened, { open, close, toggle }] = useDisclosure(false);
   return (
 <>
+<div className="flex flex-col gap-10">
+  <section>
+  <Carousel
+      withIndicators
+      height={200}
+      slideSize={{ base: '100%', sm: '50%', md: '33.333333%' }}
+      slideGap={{ base: 0, sm: 'md' }}
+      loop
+      align="start"
+    >
+      <Carousel.Slide>
+        <div className="bg-red-500">
+          1
+        </div>
+        </Carousel.Slide>
+      <Carousel.Slide>
+        <div className="bg-red-500">
+         2
+        </div>
+        </Carousel.Slide>
+      <Carousel.Slide>
+        <div className="bg-red-500">
+        3
+        </div>
+        </Carousel.Slide>
+      <Carousel.Slide>
+        <div className="bg-red-500">
+        4
+        </div>
+        </Carousel.Slide>
+      <Carousel.Slide>
+        <div className="bg-red-500">
+       5
+        </div>
+        </Carousel.Slide>
+    </Carousel>
+  </section>
     <section>
         <div className="my-16 flex justify-center">
             <h3 className="font-bold text-3xl">Shop By Category</h3>
@@ -26,11 +64,32 @@ function Home(){
   title="Giaps Giaps" 
   quantity="15" 
 />
+        <CardCategory 
+  image="https://pettie.wpengine.com/wp-content/uploads/2023/04/Pty-Category-List-Img-2.webp" 
+  title="Giaps Giaps" 
+  quantity="15" 
+/>
+        <CardCategory 
+  image="https://pettie.wpengine.com/wp-content/uploads/2023/04/Pty-Category-List-Img-2.webp" 
+  title="Giaps Giaps" 
+  quantity="15" 
+/>
+        <CardCategory 
+  image="https://pettie.wpengine.com/wp-content/uploads/2023/04/Pty-Category-List-Img-2.webp" 
+  title="Giaps Giaps" 
+  quantity="15" 
+/>
+        <CardCategory 
+  image="https://pettie.wpengine.com/wp-content/uploads/2023/04/Pty-Category-List-Img-2.webp" 
+  title="Giaps Giaps" 
+  quantity="15" 
+/>
 
         </div>
     </section>
 
         <Hero/>
+        <section>
         <div className="grid grid-cols-4 px-20">
         <div className="card">
             <div className="bg-orange-200 relative overflow-hidden">
@@ -42,8 +101,8 @@ function Home(){
             </div>
         </div>
         </div>
-
-
+    </section>
+</div>
 </>
     //   <div className="">
     //     <Button className="!bg-red-600">Submit</Button>
