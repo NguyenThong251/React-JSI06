@@ -6,7 +6,7 @@ export default function CardProduct({ id,name, price, image }) {
     const navigate = useNavigate();
 
     const handleClick = () => {
-      navigate(`/product/${id}`);
+     navigate(`/product/${id}`);
     };
   return (
     <div className="flex flex-col" onClick={handleClick}>
