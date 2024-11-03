@@ -7,6 +7,7 @@ import Signup from "./pages/user/Signup";
 import Login from "./pages/user/Login";
 import Cart from "./pages/user/Cart";
 import { MantineProvider } from "@mantine/core";
+import ProductDetail from "./pages/user/ProductDetail";
 function App() {
   return (
     <MantineProvider withGlobalStyles withNormalizeCSS>
@@ -20,6 +21,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/product/:id" element={<ProductDetail />} />
         </Routes>
       </div>
     </Router>
