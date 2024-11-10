@@ -15,9 +15,40 @@ export function useProducts() {
       setLoading(false);
     }
   };
+  const addProduct = async (product) => {
+    try {
+      const response = await apiClient.post("/product", product);
+      setProducts((prevProducts) => [...prevProducts, response.data]);
+    } catch (error) {
+      console.error("Error adding product:", error);
+    }
+  };
+
+  const updateProduct = async (id, updatedProduct) => {
+    try {
+      await apiClient.put(`/product/${id}`, updatedProduct);
+      setProducts((prevProducts) =>
+        prevProducts.map((p) => (p.id === id ? { ...p, ...updatedProduct } : p))
+      );
+    } catch (error) {
+      console.error("Error updating product:", error);
+    }
+  };
+
+  const deleteProduct = async (id) => {
+    try {
+      await apiClient.delete(`/product/${id}`);
+      setProducts((prevProducts) => prevProducts.filter((p) => p.id !== id));
+    } catch (error) {
+      console.error("Error deleting product:", error);
+    }
+  };
   useEffect(() => {
     fetchProducts();
+    
   }, []);
 
-  return { products, loading };
+  return { products, loading ,addProduct,
+    updateProduct,
+    deleteProduct};
 }
