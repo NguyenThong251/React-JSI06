@@ -9,24 +9,82 @@ import Cart from "./pages/user/Cart";
 import { MantineProvider } from "@mantine/core";
 import ProductDetail from "./pages/user/ProductDetail";
 import Product from "./pages/admin/Product";
+import UserFooter from "./components/user/UserFooter";
+import AdminLayout from "./components/admin/Layout";
+
 function App() {
   return (
     <MantineProvider withGlobalStyles withNormalizeCSS>
-    <Router>
-      <Header/>
-      <div>
-        {/* Các route sẽ được đặt trong Switch */}
+      <Router>
         <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/product/:id" element={<ProductDetail />} />
-        <Route path="/admin/product" element={<Product />} />
+          {/* User Routes */}
+          <Route
+            path="/"
+            element={
+              <>
+                <Header />
+                <Home />
+                <UserFooter />
+              </>
+            }
+          />
+          <Route
+            path="/about"
+            element={
+              <>
+                <Header />
+                <About />
+                <UserFooter />
+              </>
+            }
+          />
+          <Route
+            path="/login"
+            element={
+              <>
+                <Header />
+                <Login />
+                <UserFooter />
+              </>
+            }
+          />
+          <Route
+            path="/signup"
+            element={
+              <>
+                <Header />
+                <Signup />
+                <UserFooter />
+              </>
+            }
+          />
+          <Route
+            path="/cart"
+            element={
+              <>
+                <Header />
+                <Cart />
+                <UserFooter />
+              </>
+            }
+          />
+          <Route
+            path="/product/:id"
+            element={
+              <>
+                <Header />
+                <ProductDetail />
+                <UserFooter />
+              </>
+            }
+          />
+
+          {/* Admin Routes */}
+          <Route path="/admin/product" element={<AdminLayout />}>
+            <Route index element={<Product />} />
+          </Route>
         </Routes>
-      </div>
-    </Router>
+      </Router>
     </MantineProvider>
   );
 }
